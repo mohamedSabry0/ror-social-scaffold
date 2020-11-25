@@ -10,7 +10,7 @@ module UserHelper
   def friendship?(user)
     if inverse_friendship_with(user).nil?
       if friendship_with(user).nil?
-        ['Invite',
+        ["Invite #{user.name}",
          friendships_path(friend_id: user.id),
          :post]
       elsif !friendship_with(user).status
