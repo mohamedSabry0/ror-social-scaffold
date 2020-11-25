@@ -38,9 +38,21 @@ RSpec.describe Friendship, type: :feature do
           click_on 'commit'
           visit users_path
         end
-        it '#accept' do
-          click_on 'Accept'
-          expect(page).to have_content('Friendship request was accepted.')
+        it '#destroy' do
+          click_on 'Reject'
+          expect(page).to have_content('Friendship was deleted.')
+        end
+        context 'accepting and unfriend' do
+          before do
+            click_on 'Accept'
+          end
+          it '#accept' do
+            expect(page).to have_content('Friendship request was accepted.')
+          end
+          it '#destroy' do
+            click_on 'Unfriend'
+            expect(page).to have_content('Friendship was deleted.')
+          end
         end
       end
     end
