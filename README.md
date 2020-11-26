@@ -1,15 +1,31 @@
-# Scaffold for social media app with Ruby on Rails
+# Social Media App With Ruby on Rails
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This is an MVP for a social media app with basic styling and functionalities.
+The features accomplished in this MVP are:
+- for guest users:
+
+    they are able to create account/log in.
+    they can see only “Sign in” and “Sign out” page.
+
+- for logged-in users:
+
+    they can see all users list.
+    they can see selected user page with their user name and all posts written by them (the most recent posts on the top).
+    they can send a friendship invitation.
+    they can see a button “Invite to friendship” next to the name of user who is not their friend yet - on both users’ list and single user page.
+    they can see pending friendship invitations sent to them from other users.
+    they can accept or reject friendships invitation.
+    they can create new posts (text only).
+    they can like/dislike posts (but they can like single post only once).
+    they can add comments to posts.
+    they can see “Timeline” page with posts (with number of likes and comments) written by them and all their friends (the most recent posts on the top).
+    Timeline page should be the root page of the app.
+
 
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
-
-## Live Demo
-
-TBA
 
 
 ## Getting Started
@@ -24,7 +40,7 @@ Postgres: >=9.5
 
 ### Setup
 
-Instal gems with:
+Install gems with:
 
 ```
 bundle install
@@ -71,7 +87,18 @@ TBA
 
 ## Authors
 
-TBA
+👤 Tazoh Yanick Tazoh
+
+- GitHub: [@t-yanick](https://github.com/t-yanick)
+- Twitter: [@ElTazoh](https://twitter.com/ElTazoh)
+- Linkedin: [Tazoh Yanick](https://linkedin.com/in/tazoh-yanick-5a978764)
+
+👤 Mohamed Sabry
+
+- Github: [@mohamedSabry0](https://github.com/mohamedSabry0)
+- Twitter: [twitter profile](https://twitter.com/mohsmh0)
+- Linkedin: [linkedin profile](https://www.linkedin.com/in/mohamed-sabry0/)
+
 
 ## 🤝 Contributing
 
@@ -85,9 +112,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- [Microverse](https://www.microverse.org/)
 
 ## 📝 License
 
-TBA
+This project is [MIT]() licensed.
+
 
