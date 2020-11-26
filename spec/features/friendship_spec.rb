@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Friendship, type: :feature do
   describe 'user index page' do
-    describe 'friendships' do 
+    describe 'friendships' do
       before do
         visit new_user_registration_path
         fill_in 'Name', with: 'w'

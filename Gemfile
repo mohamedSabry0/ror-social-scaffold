@@ -47,11 +47,11 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rails-controller-testing'
-  gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'capybara', '>= 2.15'
+  gem 'rails-controller-testing'
   gem 'rspec-retry', '~> 0.6.2'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '4.0.0.rc1'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
