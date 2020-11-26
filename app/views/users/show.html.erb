@@ -1,9 +1,6 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
-  <%= link_to friendship?(@user)[0], friendship?(@user)[1], method: friendship?(@user)[2], class: 'button'%>
-  <% if !inverse_friendship_with(@user).nil? && inverse_friendship_with(@user).status == false %>
-      <%= link_to 'Reject', friendship_path(inverse_friendship_with(@user)), method: :delete, class: 'button mx-2'%>
-    <% end %>
+  <%= friendship?(@user) %>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">

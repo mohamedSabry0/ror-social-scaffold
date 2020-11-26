@@ -2,10 +2,7 @@
   Name: <%= user.name %>
   <span class="profile-link mx-2">
     <%= link_to 'See Profile',  user_path(user), class: 'button' %>
-    <%= link_to friendship?(user)[0], friendship?(user)[1], method: friendship?(user)[2], class: 'button mx-2'%>
-    <% if !inverse_friendship_with(user).nil? && inverse_friendship_with(user).status == false %>
-      <%= link_to 'Reject', friendship_path(inverse_friendship_with(user)), method: :delete, class: 'button mx-2'%>
-    <% end %>
+    <%= friendship?(user) %>
   </span>
  
 </li>
