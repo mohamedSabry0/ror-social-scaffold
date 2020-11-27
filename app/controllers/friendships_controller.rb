@@ -6,8 +6,10 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @friendship = Friendship.find(params[:id])
-    @friendship.destroy
+    @friendship1 = Friendship.find(params[:id])
+    @friendship2 = Friendship.find_by_friend_id(@friendship1.user_id)
+    @friendship1.destroy
+    @friendship2&.destroy
     redirect_to users_path, notice: 'Friendship was deleted.'
   end
 
@@ -15,6 +17,11 @@ class FriendshipsController < ApplicationController
     friendship = Friendship.find(params[:friendship_id])
     friendship.status = true
     friendship.save
+    Friendship.create(
+      user_id: friendship.friend_id,
+      friend_id: friendship.user_id,
+      status: true
+    )
     redirect_to users_path, notice: 'Friendship request was accepted.'
   end
 end

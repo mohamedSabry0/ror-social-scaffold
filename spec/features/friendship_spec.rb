@@ -91,7 +91,7 @@ RSpec.describe Friendship, type: :feature do
             fill_in 'Password', with: '123456'
             click_on 'commit'
             visit users_path
-            expect(find('.mutual-users-list')).to have_content('Name: 3')
+            expect(find('.mutual-users')).to have_content('Name: 3')
           end
           it 'user 3 can see user1 as mutual' do
             click_on 'Sign out'
@@ -100,7 +100,7 @@ RSpec.describe Friendship, type: :feature do
             fill_in 'Password', with: '123456'
             click_on 'commit'
             visit users_path
-            expect(find('.mutual-users-list')).to have_content('Name: w')
+            expect(find('.mutual-users')).to have_content('Name: W')
           end
         end
         context 'direct friends' do
@@ -111,14 +111,14 @@ RSpec.describe Friendship, type: :feature do
             fill_in 'Password', with: '123456'
             click_on 'commit'
             visit users_path
-            find('.mutual-users-list').click_on 'Invite 3'
+            find('.mutual-users').click_on 'Invite 3'
             click_on 'Sign out'
             visit new_user_session_path
             fill_in 'Email', with: '3@ex.com'
             fill_in 'Password', with: '123456'
             click_on 'commit'
             visit users_path
-            find('.mutual-users-list').click_on 'Accept'
+            find('.mutual-users').click_on 'Accept'
           end
           it 'user 1 can see user3 as mutual' do
             click_on 'Sign out'
@@ -127,10 +127,11 @@ RSpec.describe Friendship, type: :feature do
             fill_in 'Password', with: '123456'
             click_on 'commit'
             visit users_path
-            expect(find('.mutual-users-list')).to have_content('Name: 3')
+            # sleep(20)
+            expect(find('.mutual-users')).to have_content('Name: 3')
           end
           it 'user 3 can see user1 as mutual' do
-            expect(find('.mutual-users-list')).to have_content('Name: w')
+            expect(find('.mutual-users')).to have_content('Name: W')
           end
         end
       end
