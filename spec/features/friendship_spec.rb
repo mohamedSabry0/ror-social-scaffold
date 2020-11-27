@@ -83,7 +83,7 @@ RSpec.describe Friendship, type: :feature do
           visit users_path
           click_on 'Accept'
         end
-        context 'not direct friends'do
+        context 'not direct friends' do
           it 'user 1 can see user3 as mutual' do
             click_on 'Sign out'
             visit new_user_session_path
@@ -103,7 +103,7 @@ RSpec.describe Friendship, type: :feature do
             expect(find('.mutual-users-list')).to have_content('Name: w')
           end
         end
-        context 'direct friends'do
+        context 'direct friends' do
           before do
             click_on 'Sign out'
             visit new_user_session_path

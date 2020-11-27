@@ -51,8 +51,8 @@ module UserHelper
     if @mutual_friends.empty?
       content_tag :p, 'No mutual friends at the moment'
     else
-      ("#{content_tag :h3, 'Mutual friends'}" <<
-        "#{render @mutual_friends}").html_safe
+      ((content_tag :h3, 'Mutual friends').to_s <<
+        (render @mutual_friends).to_s).html_safe
     end
   end
 end
