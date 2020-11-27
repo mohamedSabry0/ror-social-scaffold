@@ -46,4 +46,13 @@ module UserHelper
       friendship_reciever_side(user)
     end
   end
+
+  def find_mutual_friends
+    if @mutual_friends.empty?
+      content_tag :p, 'No mutual friends at the moment'
+    else
+      ("#{content_tag :h3, 'Mutual friends'}" <<
+        "#{render @mutual_friends}").html_safe
+    end
+  end
 end
