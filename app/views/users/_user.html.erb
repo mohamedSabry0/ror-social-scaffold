@@ -2,7 +2,7 @@
   Name: <%= user.name %>
   <span class="profile-link mx-2">
     <%= link_to 'See Profile',  user_path(user), class: 'button' %>
-    <%= friendship?(user) %>
+    <%= friendship_links(user) %>
   </span>
  
 </li>

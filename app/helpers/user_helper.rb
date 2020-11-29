@@ -1,49 +1,33 @@
 module UserHelper
-  def friendship_sender_side(user)
-    if current_user.friendship_with(user).nil?
-      link_to("Invite #{user.name}",
-              friendships_path(friend_id: user.id),
-              method: :post,
-              class: 'button')
-
-    elsif !current_user.friendship_with(user).status
-      link_to('delete request',
-              friendship_path(current_user.friendship_with(user)),
-              method: :delete,
-              class: 'button')
-
-    elsif current_user.friend?(user)
-      link_to('Unfriend',
-              friendship_path(current_user.friendship_with(user)),
-              method: :delete,
-              class: 'button')
-    end
-  end
-
-  def friendship_reciever_side(user)
+  def friendship_links(user)
     if current_user.friend?(user)
       link_to('Unfriend',
-              friendship_path(current_user.inverse_friendship_with(user)),
+              friendship_path(current_user.confirmed_friendships.find_by_user_id([user.id, current_user.id])),
               method: :delete,
               class: 'button')
-    else
+
+    elsif current_user.pending_friends.include?(user)
+      link_to('delete request',
+              friendship_path(current_user.pending_friendships.find_by_friend_id(user.id)),
+              method: :delete,
+              class: 'button')
+
+    elsif current_user.friend_requests.include?(user)
       link_to('Accept',
-              accept_path(friendship_id: current_user.inverse_friendship_with(user).id),
+              accept_path(friendship_id: current_user.inverted_friendships.find_by_user_id(user.id).id),
               method: :post,
               class: 'button')\
         .concat(' ')\
         .concat(link_to('Reject',
-                        friendship_path(current_user.inverse_friendship_with(user)),
+                        friendship_path(current_user.inverted_friendships.find_by_user_id(user.id)),
                         method: :delete,
                         class: 'button'))
-    end
-  end
 
-  def friendship?(user)
-    if current_user.inverse_friendship_with(user).nil?
-      friendship_sender_side(user)
     else
-      friendship_reciever_side(user)
+      link_to("Invite #{user.name}",
+              friendships_path(friend_id: user.id),
+              method: :post,
+              class: 'button')
     end
   end
 
