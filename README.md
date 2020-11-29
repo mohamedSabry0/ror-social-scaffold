@@ -21,10 +21,12 @@ The features accomplished in this MVP are:
     they can see “Timeline” page with posts (with number of likes and comments) written by them and all their friends (the most recent posts on the top).
     Timeline page should be the root page of the app.
 
+## Screenshot
+![screenshot1](app/assets/images/screenshot.png)
 
 ## Built With
 
-- Ruby v2.7.0
+- Ruby v2.6.5
 - Ruby on Rails v5.2.4
 
 
@@ -34,8 +36,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
+Ruby: 2.6.5
+Rails: 5.2.4
 Postgres: >=9.5
 
 ### Setup
@@ -53,16 +55,6 @@ Setup database with:
    rails db:migrate
 ```
 
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
-
-
 ### Usage
 
 Start server with:
@@ -76,14 +68,13 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    rspec 
 ```
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
 ### Deployment
 
-TBA
+[Live link](https://fast-ravine-48156.herokuapp.com/)
 
 ## Authors
 
@@ -91,7 +82,7 @@ TBA
 
 - GitHub: [@t-yanick](https://github.com/t-yanick)
 - Twitter: [@ElTazoh](https://twitter.com/ElTazoh)
-- Linkedin: [Tazoh Yanick](https://linkedin.com/in/tazoh-yanick-5a978764)
+- Linkedin: [Tazoh Yanick](https://linkedin.com/in/tazoh-yanick)
 
 👤 Mohamed Sabry
 
@@ -104,7 +95,7 @@ TBA
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/mohamedSabry0/ror-social-scaffold/issues).
 
 ## Show your support
 
