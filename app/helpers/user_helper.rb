@@ -23,7 +23,7 @@ module UserHelper
                         method: :delete,
                         class: 'button'))
 
-    else
+    elsif current_user != user
       link_to("Invite #{user.name}",
               friendships_path(friend_id: user.id),
               method: :post,
