@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def timeline_posts
     @timeline_posts ||= Post.all.ordered_by_most_recent.includes(:user)
     @timeline_posts = @timeline_posts.map do |post|
-      post if [current_user, current_user.friends_list].flatten.include?(post.user)
+      post if [current_user, current_user.friends].flatten.include?(post.user)
     end.compact
   end
 
